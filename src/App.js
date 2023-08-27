@@ -10,6 +10,8 @@ import {
 
 const App = () => {
   const [refreshTodosFlag, setrefreshTodosFlag] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isSortPressed, setIsSortPressed] = useState(false);
 
   const refreshTodos = () => setrefreshTodosFlag(!refreshTodosFlag);
 
@@ -18,9 +20,25 @@ const App = () => {
   const { isUpdating, requestUpdateItem } = useRequestUpdateItem(refreshTodos);
   const { isDeleting, requestDeleteItem } = useRequestDeleteItem(refreshTodos);
 
+  let filteredTodos = todos.filter((todo) =>
+    todo.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  if (isSortPressed) {
+    filteredTodos = filteredTodos.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+  }
+
   return (
     <div className="App">
       <h1>Todos List</h1>
+      <input
+        type="text"
+        placeholder="Search Todos..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       {isLoading ? (
         <div className="loader">...</div>
       ) : (
@@ -34,7 +52,7 @@ const App = () => {
               </tr>
             </thead>
             <tbody>
-              {todos.map(({ userId, id, title, completed }) => (
+              {filteredTodos.map(({ userId, id, title, completed }) => (
                 <tr key={id}>
                   <td>{userId}</td>
                   <td>{title}</td>
@@ -54,6 +72,7 @@ const App = () => {
       <button disabled={isDeleting} onClick={requestDeleteItem}>
         Delete New Item
       </button>
+      <button onClick={() => setIsSortPressed(!isSortPressed)}>Aa-Zz</button>
     </div>
   );
 };

@@ -6,7 +6,7 @@ export const useRequestDeleteItem = (refreshTodos) => {
   const requestDeleteItem = () => {
     setIsDeliting(true);
 
-    fetch("http://localhost:3004/todos/14", {
+    fetch("http://localhost:3004/todos/4", {
       method: "DELETE",
     })
       .then((rawResponse) => rawResponse.json())
