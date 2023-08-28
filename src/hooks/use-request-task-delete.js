@@ -11,7 +11,7 @@ export const useRequestDeleteItem = (refreshTodos) => {
     })
       .then((rawResponse) => rawResponse.json())
       .then((response) => {
-        console.log("TV deleted, answer from server", response);
+        console.log("Task deleted, answer from server", response);
         refreshTodos();
       })
       .finally(() => setIsDeliting(false));

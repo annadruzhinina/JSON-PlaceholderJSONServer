@@ -17,7 +17,7 @@ export const useRequestAddItem = (refreshTodos) => {
     })
       .then((rawResponse) => rawResponse.json())
       .then((response) => {
-        console.log("New task added, answer from server", response);
+        console.log("New Todo is added, answer from server", response);
         refreshTodos();
       })
       .finally(() => setIsCreating(false));

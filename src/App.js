@@ -67,10 +67,10 @@ const App = () => {
         Add new item
       </button>
       <button disabled={isUpdating} onClick={requestUpdateItem}>
-        Update Laptop
+        Update Todo
       </button>
       <button disabled={isDeleting} onClick={requestDeleteItem}>
-        Delete New Item
+        Delete Todo
       </button>
       <button onClick={() => setIsSortPressed(!isSortPressed)}>Aa-Zz</button>
     </div>

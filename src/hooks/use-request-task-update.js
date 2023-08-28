@@ -17,7 +17,7 @@ export const useRequestUpdateItem = (refreshTodos) => {
     })
       .then((rawResponse) => rawResponse.json())
       .then((response) => {
-        console.log("New item added, answer from server", response);
+        console.log("Todo is updated, answer from server", response);
         refreshTodos();
       })
       .finally(() => setIsUpdating(false));
