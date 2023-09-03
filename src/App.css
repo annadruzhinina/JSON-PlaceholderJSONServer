@@ -57,4 +57,10 @@ th {
 }
 button {
   margin-top: 20px;
+  margin-right: 10px;
+  background-color: rgb(129, 164, 195);
+  border: 1px rgb(129, 164, 195) solid;
+  
+  color: white;
+  padding: 10px;
 }
