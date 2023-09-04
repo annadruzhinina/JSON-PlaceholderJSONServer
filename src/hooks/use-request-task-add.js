@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export const useRequestAddItem = (refreshProducts) => {
-  const [isCreating, setIsCreatig] = useState(false);
+export const useRequestAddItem = (refreshTodos) => {
+  const [isCreating, setIsCreating] = useState(false);
 
   const requestAddItem = () => {
-    setIsCreatig(true);
+    setIsCreating(true);
     // POST
     fetch("http://localhost:3004/todos", {
       method: "POST",
@@ -18,9 +18,9 @@ export const useRequestAddItem = (refreshProducts) => {
       .then((rawResponse) => rawResponse.json())
       .then((response) => {
         console.log("New task added, answer from server", response);
-        refreshProducts();
+        refreshTodos();
       })
-      .finally(() => setIsCreatig(false));
+      .finally(() => setIsCreating(false));
   };
 
   return {

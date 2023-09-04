@@ -16,7 +16,7 @@ const App = () => {
   const { isLoading, todos } = useRequestGetTodos(refreshTodosFlag);
   const { isCreating, requestAddItem } = useRequestAddItem(refreshTodos);
   // const { isUpdating, requestUpdateItem } = useRequestUpdateItem(refreshTodos);
-  // const { isDeleting, requestDeleteItem } = useRequestDeleteItem(refreshTodos);
+  const { isDeleting, requestDeleteItem } = useRequestDeleteItem(refreshTodos);
 
   return (
     <div className="App">
@@ -50,10 +50,10 @@ const App = () => {
       </button>
       {/* <button disabled={isUpdating} onClick={requestUpdateItem}>
         Update Laptop
-      </button>
+      </button> */}
       <button disabled={isDeleting} onClick={requestDeleteItem}>
         Delete New Item
-      </button> */}
+      </button>
     </div>
   );
 };

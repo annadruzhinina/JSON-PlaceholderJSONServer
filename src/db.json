@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "userId": 1,
-      "id": 13,
-      "title": "et doloremque nulla",
-      "completed": false
-    },
-    {
       "userId": 333,
       "title": "New task",
       "completed": true,
