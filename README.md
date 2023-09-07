@@ -9,4 +9,5 @@ json-server --watch src/db.json --port 3004
 ```
 
 
-<img width="653" alt="Screenshot 2023-09-06 at 11 09 58 PM" src="https://github.com/annadruzhinina/JSON-PlaceholderJSONServer/assets/41097193/31c4801f-52cc-4e83-82fe-e4fae127c92c">
+
+<img width="587" alt="Screenshot 2023-09-06 at 11 21 26 PM" src="https://github.com/annadruzhinina/JSON-PlaceholderJSONServer/assets/41097193/823819a0-7619-43f8-bc3f-57e8db0a65b7">
